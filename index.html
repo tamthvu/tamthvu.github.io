@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+
+    <meta
+      name="description"
+      content="Welcome to my portfolio website. I am an embedded engineer and I specialize in creating firmware and hardware solutions. Explore my projects and contact me for any inquiries or collaborations."
+    />
+
+    <meta itemprop="name" content="Tam's Portfolio">
+    <meta itemprop="description" content="Welcome to my portfolio website. I am an embedded engineer and I specialize in creating firmware and hardware solutions.">
+    <meta itemprop="image" content="assets/images/sharing-card.png">
+
+    <meta property="og:url" content="https://ossportfolio.netlify.app">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Tam's Portfolio">
+    <meta property="og:description" content="Welcome to my portfolio website. I am an embedded engineer and I specialize in creating firmware and hardware solutions.">
+    <meta property="og:image" content="assets/images/sharing-card.png">
+
+    <meta name="twitter:image" content="assets/images/sharing-card.png">
+
+    <link
+      rel="preload"
+      href="assets/fonts/Mona-Sans.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <link rel="stylesheet" href="style.css"  />
+    <script src="script.js" defer></script>
+
+    <title>Tam's Portfolio</title>
+    
+    <style>
+      /* Video-specific styling */
+      .work-media {
+        flex-basis: 49%;
+        max-inline-size: 785px;
+      }
+      
+      .work-media video {
+        width: 100%;
+        height: auto;
+        border-radius: var(--gutter-nano);
+        display: block;
+      }
+      
+      body.light .work-media video {
+        box-shadow: var(--shadow);
+      }
+      
+      @media (max-width: 1045px) {
+        .work-media {
+          margin-block-end: var(--gutter-medium);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <script>
+      const theme = localStorage.getItem("theme") || "dark";
+      document.body.classList.add(theme);
+    </script>
+
+    <header class="header">
+
+      <div class="menu-btn-container">
+        <div class="container">
+          <button type="button"  class="menu-btn">menu</button>
+        </div>
+      </div>
+
+      <nav class="nav hidden">
+        <ol class="nav-items">
+          <li class="nav-item"><a href="#">Home</a></li>
+          <li class="nav-item"><a href="#work">My Work</a></li>
+          <li class="nav-item"><a href="#skills">My Skills & Tools</a></li>
+          <!-- <li class="nav-item">
+            <a href="#contact" data-focused="last-focused">Contact</a>
+          </li> -->
+        </ol>
+      </nav>
+
+      <div class="container">
+        <div class="header-textbox">
+          <h1 class="h1">
+            <span>Hi, I'm Tam</span>
+            <span>Embedded Engineer</span>
+          </h1>
+
+          <p class="header-text">
+            An embedded engineer able to design, deliver, and deploy quality firmware and software
+          </p>
+
+          <div class="header-btns">
+            <a href="#contact" class="btn btn-cta">Contact me!</a>
+            <a href="#work" class="btn btn-secondary">See my work</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="work">
+        <div class="container">
+          <h2 class="h2" id="work">Selected Work</h2>
+          <div class="work-boxes">
+            
+            <!-- Project 1: Haptic Reality Board with Video -->
+            <div class="work-box">
+              <div class="work-textbox">
+                <h3 class="h3">Haptic Reality Board</h3>
+                <p class="work-text">
+                  Custom PCB that simulates touch through ultrasonic waves converging at focal points, visualized in Unity for VR systems.
+                </p>
+                <ol class="work-technologies">
+                  <li>ESP32</li>
+                  <li>Altium Designer</li>
+                  <li>FPGA</li>
+                </ol>
+                <!-- <div class="work-links">
+                  <a href="#" target="_blank" rel="noopener" class="link">Explore this project</a>
+                  <a href="#" target="_blank" rel="noopener" title="Source code">
+                    <img src="assets/images/social-links/github.svg" alt="GitHub" loading="lazy" />
+                  </a>
+                </div> -->
+              </div>
+              
+              <div class="work-media">
+                <video controls loop muted playsinline>
+                  <source src="assets\images\work\hapticVid.mp4" type="video/mp4">
+                  Your browser doesn't support video playback.
+                </video>
+              </div>
+            </div>
+            
+            <!-- Project 2: IoT Lightbox -->
+            <div class="work-box">
+              <div class="work-textbox">
+                <h3 class="h3">IoT Lightbox Load Simulator</h3>
+                <p class="work-text">
+                  A custom ESP32-powered lightbox that uses high-wattage bulbs as a physical load simulator. 
+                  Includes web interface hosted on the ESP32 controls relay-switched lighting circuits, sending electric current data to InfluxDB.
+                </p>
+                <ol class="work-technologies">
+                  <li>ESP32</li>
+                  <li>Arduino</li>
+                  <li>C/C++</li>
+                  <li>HTML/CSS</li>
+                </ol>
+                <!-- <div class="work-links">
+                  <a href="#" target="_blank" rel="noopener" class="link">Explore this project</a>
+                  <a href="#" target="_blank" rel="noopener" title="Source code">
+                    <img src="assets/images/social-links/github.svg" alt="GitHub" loading="lazy" />
+                  </a>
+                </div> -->
+              </div>
+              
+              <div class="work-media">
+                <video controls loop muted playsinline>
+                  <source src="assets\images\work\lightbox.MOV" type="video/mp4">
+                  Your browser doesn't support video playback.
+                </video>
+              </div>
+            </div>
+
+            <!-- Project 3: Serial Evader -->
+            <div class="work-box">
+              <div class="work-textbox">
+                <h3 class="h3">Serial Evader</h3>
+                <p class="work-text">
+                  Robot that moves around and avoids obstacles in its way. Used ultrasonic sensor and motor drivers to power bot. UB Hacking 3rd Place
+                </p>
+                <ol class="work-technologies">
+                  <li>Arduino</li>
+                  <li>C++</li>
+                  <li>Clearcore</li>
+                </ol>
+                <!-- <div class="work-links">
+                  <a href="#" target="_blank" rel="noopener" class="link">Explore this project</a>
+                  <a href="http://github.com/devsyedmohsin" target="_blank" rel="noopener" title="Source code">
+                    <img src="assets/images/social-links/github.svg" alt="GitHub" loading="lazy" />
+                  </a>
+                </div> -->
+              </div>
+              
+              <div class="work-media">
+                <video controls loop muted playsinline>
+                  <source src="assets\images\work\serial_evader.MOV" type="video/mp4">
+                  Your browser doesn't support video playback.
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="skills">
+        <div class="container">
+          <h2 class="h2" id="skills">Technical Skills & Tools</h2>
+          <div class="skills-grid">
+            <div class="skill-box">
+              <h3 class="h3">Programming Languages</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">C</span>
+                <span class="skill-tag">C++</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">JS</span>
+                <span class="skill-tag">SystemVerilog</span>
+                <span class="skill-tag">MATLAB</span>
+                <span class="skill-tag">Assembly</span>
+                <span class="skill-tag">HTML/CSS</span>
+            </div>
+          </div>
+            
+            <div class="skill-box">
+              <h3 class="h3">Embedded Development Tools</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">ESP-IDF</span>
+                <span class="skill-tag">Keil µVision</span>
+                <span class="skill-tag">Code Composer Studio</span>
+                <span class="skill-tag">Arduino</span>
+                <span class="skill-tag">Mbed OS</span>
+              </div>
+            </div>
+            
+            <div class="skill-box">
+              <h3 class="h3">Hardware and Debugging Tools</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">Oscilloscopes</span>
+                <span class="skill-tag">Multimeters</span>
+                <span class="skill-tag">Logic & Spectrum Analyzers</span>
+                <span class="skill-tag">In-circuit debuggers</span>
+                <span class="skill-tag">JTAG</span>
+              </div>
+            </div>
+            
+            <div class="skill-box">
+              <h3 class="h3">Communication Protocols</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">UART</span>
+                <span class="skill-tag">I2C</span>
+                <span class="skill-tag">SPI</span>
+              </div>
+            </div>
+
+            <div class="skill-box">
+              <h3 class="h3">EDA/CAD Tools</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">KiCad</span>
+                <span class="skill-tag">Altium Designer</span>
+                <span class="skill-tag">Cadence</span>
+                <span class="skill-tag">Multisim</span>
+              </div>
+            </div>
+            
+            <div class="skill-box">
+              <h3 class="h3">Version Control & Project Management</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">Jira</span>
+                <span class="skill-tag">Trello</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- <section class="contact">
+        <div class="container">
+          <h2 class="h2" id="contact">Send Message</h2>
+          <div class="contact-content">
+            <div class="contact-textbox">
+              <p class="contact-text">
+                Send me a message about anything interesting or if there are any questions
+              </p>
+              <img src="assets/images/signatures.png" alt="Tam" class="signatures" loading="lazy" />
+            </div>
+            <form action="#" class="contact-form" netlify>
+              <div class="form-field">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" required />
+              </div>
+              <div class="form-field">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required inputmode="email" />
+              </div>
+              <div class="form-field">
+                <label for="message">Message</label>
+                <textarea name="message" id="message" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-cta">Send</button>
+            </form>
+          </div>
+        </div>
+      </section> -->
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <nav>
+            <ol class="footer-links">
+              <li class="footer-link">
+                <a title="GitHub" href="https://github.com/tamthvu" target="_blank" rel="noopener">
+                  <img loading="lazy" src="assets/images/social-links/github.svg" alt="GitHub" />
+                </a>
+              </li>
+              <li class="footer-link">
+                <a title="Linkedin" href="https://www.linkedin.com/in/tamthvu/" target="_blank" rel="noopener">
+                  <img loading="lazy" src="assets/images/social-links/linkedin.svg" alt="Linkedin" />
+                </a>
+              </li>
+            </ol>
+          </nav>
+          <p class="footer-text">
+            &copy; <span>2024</span> - Template designed & developed by <a target="_blank" rel="noopener" href="https://github.com/devsyedmohsin">Syed Mohsin.</a>
+          </p>
+          <label class="theme-switch" for="theme-switch">
+            <span>Dark Theme</span>
+            <input type="checkbox" id="theme-switch" role="switch"/>
+          </label>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
